@@ -1,10 +1,10 @@
 # Shells in shells
 
-## Working in multiple directories
+## 在多目录下工作
 
 While it's common to work in one directory, it can be handy to work in multiple places at the same time. For this, Nu offers the concept of "shells". As the name implies, they're a way of running multiple shells in one, allowing you to quickly jump between working directories and more.
 
-To get started, let's enter a directory:
+开始，让我们进入一个目录：
 
 ```
 /home/jonathan/Source/lark(master)> enter ../lark
