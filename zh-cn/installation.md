@@ -8,14 +8,14 @@
 
 ## 准备工作
 
-在安装Nu执行，我们需要确认
-Before we can install Nu, we need to make sure our system has the necessary requirements. Currently, this means making sure we have both the Rust toolchain and local dependencies installed.
+在安装Nu执行，我们需要确认我们系统有必须的要求
+我们需要在安装Nu之前确认我们的已经拥有系统所需的要求。目前，这意味着我们需要确保Rust toolchain和本地的依赖都已经安装好。
 
 ### 安装Rust
 
-If we don't already have Rust on our system, the best way to install it via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions. 
+如果我们的系统没有安装Rust，最好的方法就是通过它来安装[rustup](https://rustup.rs/)。Rustup是一个管理Rust安装的方法，同时包含管理使用不同版本的Rust。
 
-Nu currently requires the **nightly** version of Rust. When you first open "rustup" it will ask what version of Rust you wish to install:
+Nu现在要求Rust的版本是**nightly**。当我们第一打开“rustup”是，它会问我们要安装Rust的哪个版本：
 
 ```
 Current installation options:
@@ -35,19 +35,19 @@ Current installation options:
 Default host triple?
 ```
 
-回车选择默认安装。
+按下Enter，选择默认安装。
 
 ```
 Default toolchain? (stable/beta/nightly/none)
 ```
 
-Make sure to type "nightly" here and press enter. This should give this setup:
+确定版本是“nightly"，并且按下Enter键，我们将设置一下这个设置：
 
 ```
 Modify PATH variable? (y/n)
 ```
 
-You can optionally update your path. This is generally a good idea, as it makes later steps easier.
+你可以选择更新路径，这通常是一个不错的主意可以是你后续的步骤更加的容易。
 
 
 ```
@@ -62,11 +62,11 @@ Current installation options:
 3) Cancel installation
 ```
 
-You can see that our default toolchain has now changed to the nightly toolchain. If this sounds a bit risky, don't worry. The Rust compiler is run through a full battery of tests. The nightly compiler is often as reliable as the stable version.
+你可以看到我们默认的toolchain已经变成了nightly toolchain。如果这个听起来有点儿风险，请不要担心。Rust编译器是通过一整套测试运行的。nightly版本的编译器通常是最接近稳定版本的。
 
-Once we are ready, we press 1 and then enter.  After this point, we can follow the instructions "rustup" gives us and we should have a working Rust compiler on our system.
+一旦我们准备好了，我们按下1，然后按下Enter键。在这之后，我们可以按照“rustup”给我们的说明，在我们的系统上有一个可以工作的Rust编译器。
 
-If you'd rather not install Rust via "rustup", you can also install it via other methods (eg from a package in a Linux distro). Just be sure to install a recent nightly version of the toolchain.
+如果你不想通过“rustup”安装Rust，你也可以使用其他的方法安装它（例如：安装来自Linux发行版的软件包），请务必安装最新的nightly版本的toolchain。
 
 ## 依赖
 
@@ -78,7 +78,7 @@ If you'd rather not install Rust via "rustup", you can also install it via other
 apt install pkg-config libssl-dev
 ```
 
-Linux users who wish to use the `rawkey` or `clipboard` optional features will need to install the "libx11-dev" and "libxcb-composite0-dev" packages:
+Linux用户希望使用`rawkey`和`clipboard`功能选项将需要安装软件包“libx11-dev”和“libxcb-composite0-dev”
 
 ```
 apt install libxcb-composite0-dev libx11-dev
@@ -94,29 +94,30 @@ brew install openssl cmake
 
 ## 从[crates.io](https://crates.io)安装
 
-Once we have the dependencies Nu needs, we can install it using the `cargo` command that comes with the Rust compiler.
+一旦我们有Nu的依赖，我们可以使用Rust编译器附带的`cargo`命令安装它。
 
 ```
 > cargo install nu
 ```
 
-That's it!  The cargo tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so that we can run it.
+是的！工具cargo可以下载Nu并且在源码的依赖，编译之后会把Nu安装到cargo的bin目录下以便我们可以运行它。
 
-Once installed, we can run Nu using the `nu` command:
+安装之后，我们可以使用`Nu`命令执行Nu：
 
 ```
 $ nu
 /home/jonathan/Source> 
 ```
 
-## Building from source
+## 源码编译
 
-We can also build our own Nu from source directly from github. This gives us immediate access to the latest Nu features and bugfixes.
+我们也可以直接从github上下载源码，编译我们自己Nu。这可以使我们可以立即接触到Nu最新的功能和漏洞修复。
 
 ```
 > git clone https://github.com/nushell/nushell.git
 ```
 
+Git将克隆主要的nushell仓库。从那里你可以构建和运行Nu：
 Git will clone the main nushell repo for us. From there, we can build and run Nu:
 
 ```
@@ -124,11 +125,11 @@ Git will clone the main nushell repo for us. From there, we can build and run Nu
 nushell> cargo build && cargo run
 ```
 
-You can also build and run Nu in release mode:
+你还可以在发布模式下构建和运行Nu
 
 ```
 nushell> cargo build --release && cargo run --release
 ```
 
-People familiar with Rust may wonder why we do both a "build" and a "run" step if "run" does a build by default. This is to get around a shortcoming of the new `default-run` option in Cargo, and ensure that all plugins are built, though this may not be required in the future.
+熟悉Rust的人可能知道执行“run”默认会执行构建，因此您可能想知道为什么这里要运行“build”和“run”。这是为了避免Cargo中新的`default-run`选项的缺点，并且确保所有的插件都已构建，尽管可能将来不需要它们。
 

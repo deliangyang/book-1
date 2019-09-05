@@ -1,6 +1,6 @@
 # 介绍
 
-Hello, and welcome to the Nushell project. The goal of this project is to take the Unix philosophy of shells, where pipes connect simple commands together, and bring it to the modern style of development.
+你好，欢迎Nushell项目。该项目的目标是将简单的命令拼接在一的Unix Shell理念融入到现代开发风格中。
 
 Nu takes cues from a lot of familiar territory: traditional shells like bash, advanced shells like PowerShell, functional programming, systems programming, and more. But rather than trying to be the jack of all trades, Nu focuses its energy on doing a few things well:
 

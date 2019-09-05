@@ -183,7 +183,7 @@ description = "A shell for the GitHub era"
 license = "MIT"
 ```
 
-## Opening URLs
+## 打开链接
 
 In addition to loading files from your filesystem, you can also give the `open` command a URL. This will fetch the contents of the URL from the internet and return it to you:
 
