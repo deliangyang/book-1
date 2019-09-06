@@ -113,13 +113,14 @@ What we're looking for might be inside of the "bin" column. So let's go into the
 ----+----------------------+---------------------------
 ```
 
+从这里，我们总是可以使用命令p（之前的）之前跳回我们正在使用的目录。
 From here, we can always jump back to the directory we were working in before using p (for previous).
 
 ```
 /bin> p
 ```
 
-Let's verify the shells again:
+让我们再一次验证这个shells命令：
 
 ```
 /Users/andresrobalino/Code/nushell(master)> shells
